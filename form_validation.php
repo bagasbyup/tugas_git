@@ -10,13 +10,14 @@
 <body>
     <?php
     // define variables and set to empty values
-    $name = $email = $gender = $comment = $website = "";
+    $name = $email = $vehicle = $comment = $website = $vehicle = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nama= test_input($_POST["nama"]);
         $email = test_input($_POST["email"]);
         $website = test_input($_POST["website"]);
         $comment = test_input($_POST["comment"]);
         $gender = test_input($_POST["gender"]);
+        $vehicle = test_input($_POST["vehicle"]);
     }
     function test_input($data)
     {
@@ -41,6 +42,11 @@
         <input type="radio" name="gender" value="Laki - Laki">Laki - Laki
         <input type="radio" name="gender" value="Lainnya">Lainnya
         <br><br>
+         Kendaraan:
+        <input type="radio" name="vehicle" value="Mobil">Mobil
+        <input type="radio" name="vehicle" value="Motor">Motor
+        <input type="radio" name="vehicle" value="Lainnya">Lainnya
+        <br><br>
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
@@ -55,6 +61,8 @@
     echo $comment;
     echo "<br>";
     echo $gender;
+    echo "<br>";
+    echo $vehicle;
     ?>
 </body>
 </html>
